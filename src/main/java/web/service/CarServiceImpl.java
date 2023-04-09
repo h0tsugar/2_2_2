@@ -22,14 +22,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> capacityCar(Integer count) {
-        if (count <= 0) {
-            count = 0;
-        }
-        if (count >= 5) {
-            return carDao.getAllCar();
-        }
-        return carDao.getAllCar().stream()
-                .limit(count)
-                .collect(Collectors.toList());
+        return carDao.capacityCar(count);
     }
 }
